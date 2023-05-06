@@ -4,17 +4,14 @@
 </head>
 <body>
 
-<h1>All Events</h1>
+<h1>Create Event</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<p th:unless="${events} and ${events.size()}">No Events!</p>
-
-<ul>
-    <th:block th:each="event : ${events}">
-        <li th:text="${event}"></li>
-    </th:block>
-</ul>
+<form method="post" action="/events/create">
+    <input type="text" name="eventName"/>
+    <input type="submit" value="Create Event"/>
+</form>
 
 </body>
 </html>
