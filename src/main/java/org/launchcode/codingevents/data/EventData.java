@@ -6,6 +6,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Created by Chris Bay
+ */
 public class EventData {
 
     private static final Map<Integer, Event> events = new HashMap<>();
@@ -18,11 +21,12 @@ public class EventData {
         return events.get(id);
     }
 
-    public static void addEvent(Event event) {
+    public static void add(Event event) {
         events.put(event.getId(), event);
     }
 
-    public static void removeEvent (int id) {
+    public static void remove(int id) {
         events.remove(id);
     }
+
 }
