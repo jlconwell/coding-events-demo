@@ -16,6 +16,7 @@ public class Event {
     private String name;
 
     @Size(max = 500, message = "Description too long!")
+    @NotBlank(message="Description Required")
     private String description;
 
     @NotBlank(message = "Email is required")
@@ -26,12 +27,12 @@ public class Event {
     @NotNull(message = "Location cannot be blank.")
     private String location;
 
-    private boolean mustRegister;
+    private boolean mustRegister = true;
 
     @Positive(message = "Number of attendees must be greater than zero.")
     private int numberOfAttendees;
 
-    public Event(String name, String description, String contactEmail, String location, boolean mustRegister, int numberOfAttendees) {
+    public Event(String name, String description, String contactEmail, String location, int numberOfAttendees) {
         this();
         this.name = name;
         this.description = description;
@@ -88,6 +89,14 @@ public class Event {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public int getNumberOfAttendees() {
+        return numberOfAttendees;
+    }
+
+    public void setNumberOfAttendees(int numberOfAttendees) {
+        this.numberOfAttendees = numberOfAttendees;
     }
 
     @Override
