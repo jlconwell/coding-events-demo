@@ -25,6 +25,9 @@
         <td th:text="${event.location}"></td>
         <td th:if="${event.mustRegister}" th:text="Yes"></td>
         <td th:text="${event.numberOfAttendees}"></td>
+        <td>
+            <a th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a>
+        </td>
     </tr>
 </table>
 
