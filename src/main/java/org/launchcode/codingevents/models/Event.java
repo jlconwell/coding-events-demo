@@ -41,6 +41,8 @@ public class Event extends AbstractEntity {
     @Positive(message = "Number of attendees must be greater than zero.")
     private int numberOfAttendees;
 
+    @ManyToOne
+    @NotNull(message = "Category is required")
     private EventCategory eventCategory;
     public Event(String name, String description, String contactEmail, String location, int numberOfAttendees, EventCategory eventCategory, boolean mustRegister) {
         this.name = name;
